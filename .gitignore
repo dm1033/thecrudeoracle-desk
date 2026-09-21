@@ -3,3 +3,15 @@ node_modules/
 .github_repo
 .env
 .env.*
+!.env.example
+.grok/
+.vercel/
+.tanstack/
+.output/
+dist/
+screenshots/
+artifacts/
+attachments/
+.node_modules.lock
+AGENTS.md
+startup.sh

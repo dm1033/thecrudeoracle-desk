@@ -1,1 +1,0 @@
-function e(e){let t={UAE:`uae`,"United Arab Emirates":`uae`,UK:`united-kingdom`,"Eq. Guinea":`equatorial-guinea`,Congo:`congo`};return t[e]?t[e]:e.toLowerCase().replace(/\./g,``).replace(/&/g,`and`).replace(/[^a-z0-9]+/g,`-`).replace(/^-|-$/g,``)}export{e as t};
