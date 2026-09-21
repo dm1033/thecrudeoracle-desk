@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/trade",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "The Crude Oracle",
+      "hasCanvas": false,
+      "bodyTextLen": 4808,
+      "bodyTextHash": "555bede2f341b565c414d8d3664616dd31d462b21ab384e070448d05ec65ce96",
+      "bodyTextPrefix": "Skip to desk The Crude Oracle Desk Continents Industry Reserves ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/trade-smoke.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "The Crude Oracle",
+      "hasCanvas": false,
+      "bodyTextLen": 4726,
+      "bodyTextHash": "6bde04af38fd2c2fceddf2bd038edc60f81d2f3f819b3eb6f5e4604a831413b9",
+      "bodyTextPrefix": "Skip to desk The Crude Oracle WTI 101.21 -1.19% BRENT 104.09 -1.",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/trade-smoke-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/trade-smoke.json"
+}

@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "The Crude Oracle",
+      "hasCanvas": false,
+      "bodyTextLen": 6805,
+      "bodyTextHash": "903c7cf3915f6f21cc2c4ad36f7690837cd761529963e9f03e8e53399ce40fe8",
+      "bodyTextPrefix": "Skip to desk The Crude Oracle Search ⌘K Desk Continents Producer",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "The Crude Oracle",
+      "hasCanvas": false,
+      "bodyTextLen": 6655,
+      "bodyTextHash": "8fa5864b83527625da0fa5a63b96e949315fa783823aece741c09166631af395",
+      "bodyTextPrefix": "Skip to desk The Crude Oracle WTI 95.47 -6.32% BRENT 98.77 -5.77",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

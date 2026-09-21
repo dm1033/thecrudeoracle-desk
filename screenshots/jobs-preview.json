@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/jobs",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "The Crude Oracle",
+      "hasCanvas": false,
+      "bodyTextLen": 10342,
+      "bodyTextHash": "beb171830fba682ba026842416a50d9755a0d4a65b51c3ac8192af899a66d8f8",
+      "bodyTextPrefix": "Skip to desk The Crude Oracle Search ⌘K Desk Continents Producer",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/jobs-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "The Crude Oracle",
+      "hasCanvas": false,
+      "bodyTextLen": 10221,
+      "bodyTextHash": "2b77172e9802e9be651c14de07a76ba14b5c26cd22d08c4d0fc11f6262350ab1",
+      "bodyTextPrefix": "Skip to desk The Crude Oracle WTI 100.87 -1.52% BRENT 103.59 -2.",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/jobs-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/jobs-preview.json"
+}
