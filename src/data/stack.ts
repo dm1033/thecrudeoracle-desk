@@ -282,3 +282,48 @@ export const STATUS_LABEL: Record<FeedStatus, string> = {
   book: "On the book",
   dark: "Dark",
 };
+
+/** The sentence the brief cuts off on. Each step is a different book. */
+export type ChainStep = {
+  id: string;
+  k: string;
+  title: string;
+  body: string;
+  status: FeedStatus;
+  href: string;
+};
+
+export const GULF_CHAIN: ChainStep[] = [
+  {
+    id: "rigs",
+    k: "01",
+    title: "Permian rigs",
+    body: "Baker Hughes is a Friday print, not a barrel. The working lag to Permian light-sweet is three to six months. I will not turn a rig into a volume.",
+    status: "book",
+    href: "/signals",
+  },
+  {
+    id: "move",
+    k: "02",
+    title: "Toward the coast",
+    body: "When that crude exists, it moves to the Gulf. This desk has no pipeline nomination and no export program. The path is named. The barrels are not.",
+    status: "dark",
+    href: "/flows",
+  },
+  {
+    id: "term",
+    k: "03",
+    title: "MEH, Enterprise, Plains",
+    body: "Argus WTI Houston PA0033586 and Midland PA0033587 are differentials to the NYMEX settle at those terminals. Codes on the book. Assessments dark.",
+    status: "dark",
+    href: "/trade",
+  },
+  {
+    id: "sea",
+    k: "04",
+    title: "Houston and Corpus",
+    body: "Those ports are on the AIS pull. A hull is not a cargo. Vortexa grade flows and Signal freight stay dark, so the export window is not called open.",
+    status: "pull",
+    href: "/ais",
+  },
+];

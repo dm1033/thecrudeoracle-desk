@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { TapeBar } from "@/components/tape-bar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { DOMAINS, FEEDS, STACK_RULE, STATUS_LABEL, type FeedDomain, type FeedStatus } from "@/data/stack";
+import { DOMAINS, FEEDS, GULF_CHAIN, STACK_RULE, STATUS_LABEL, type FeedDomain, type FeedStatus } from "@/data/stack";
 import { formatPrice } from "@/lib/format";
 import { getTape } from "@/lib/get-tape";
 import { cn } from "@/lib/cn";
@@ -69,6 +69,33 @@ function StackPage() {
             body="This page, the industry book, the trade crack, the AIS plot. TanStack on Vercel. Not Snowflake, not a tick store."
           />
         </div>
+
+        <section className="mt-12" aria-labelledby="gulf-chain">
+          <p className="font-mono text-xs uppercase tracking-wider text-muted">Where the brief stops</p>
+          <h2 id="gulf-chain" className="mt-2 max-w-3xl font-display text-3xl tracking-tight">
+            As this crude moves to Gulf Coast export.
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">
+            Four books in a row. Rigs, then months, then a terminal differential, then a hull. I do not collapse them
+            into one export number. Mars and Southern Green Canyon are the sour coast — ASCI — and they are not this
+            barrel.
+          </p>
+          <ol className="mt-6 grid gap-3 md:grid-cols-4">
+            {GULF_CHAIN.map((step) => (
+              <li key={step.id} className="rounded-xl border border-border bg-surface p-4">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono text-xs text-subtle">{step.k}</span>
+                  <Badge tone={TONE[step.status]}>{STATUS_LABEL[step.status]}</Badge>
+                </div>
+                <h3 className="mt-3 font-display text-xl tracking-tight">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
+                <Link to={step.href} className="mt-3 inline-flex text-sm underline">
+                  Open the book
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </section>
 
         <div className="mt-8 flex gap-2 overflow-x-auto pb-1" aria-label="Domain">
           {(["All", ...DOMAINS] as const).map((d) => (
