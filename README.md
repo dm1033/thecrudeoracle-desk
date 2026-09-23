@@ -15,6 +15,7 @@ Built for traders, operators, NOCs and investors. Public sources (EIA, IEA, OPEC
 | Industry | Spare, two breakevens, decline, capex |
 | Trade | Grades, chokes, 3-2-1 crack |
 | AIS | VesselFinder expected arrivals + port calls, MarineTraffic tankers in the choke boxes |
+| Stack | Feed register: live, on the book, on pull, or dark. Physical VWAP. No invented PRA prints |
 | Invest | Watchlist mapped to barrels and cash |
 | Jobs · Earn $$$ | Oil-industry search + skill transfer + [Construct CV](https://linkedinconstructioncvprofile.com/) |
 | Substack | Dispatch letter + RSS at `/feed.xml` |

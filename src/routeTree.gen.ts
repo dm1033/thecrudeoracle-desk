@@ -23,6 +23,7 @@ import { Route as ProducersRouteImport } from './routes/producers'
 import { Route as ReservesRouteImport } from './routes/reserves'
 import { Route as SignalsRouteImport } from './routes/signals'
 import { Route as SourcesRouteImport } from './routes/sources'
+import { Route as StackRouteImport } from './routes/stack'
 import { Route as SubstackRouteImport } from './routes/substack'
 import { Route as TradeRouteImport } from './routes/trade'
 import { Route as ContinentsIndexRouteImport } from './routes/continents.index'
@@ -102,6 +103,11 @@ const SourcesRoute = SourcesRouteImport.update({
   path: '/sources',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StackRoute = StackRouteImport.update({
+  id: '/stack',
+  path: '/stack',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SubstackRoute = SubstackRouteImport.update({
   id: '/substack',
   path: '/substack',
@@ -158,6 +164,7 @@ export interface FileRoutesByFullPath {
   '/reserves': typeof ReservesRoute
   '/signals': typeof SignalsRoute
   '/sources': typeof SourcesRoute
+  '/stack': typeof StackRoute
   '/substack': typeof SubstackRoute
   '/trade': typeof TradeRoute
   '/continents/$slug': typeof ContinentsSlugRoute
@@ -179,6 +186,7 @@ export interface FileRoutesByTo {
   '/reserves': typeof ReservesRoute
   '/signals': typeof SignalsRoute
   '/sources': typeof SourcesRoute
+  '/stack': typeof StackRoute
   '/substack': typeof SubstackRoute
   '/trade': typeof TradeRoute
   '/continents/$slug': typeof ContinentsSlugRoute
@@ -204,6 +212,7 @@ export interface FileRoutesById {
   '/reserves': typeof ReservesRoute
   '/signals': typeof SignalsRoute
   '/sources': typeof SourcesRoute
+  '/stack': typeof StackRoute
   '/substack': typeof SubstackRoute
   '/trade': typeof TradeRoute
   '/continents/$slug': typeof ContinentsSlugRoute
@@ -230,6 +239,7 @@ export interface FileRouteTypes {
     | '/reserves'
     | '/signals'
     | '/sources'
+    | '/stack'
     | '/substack'
     | '/trade'
     | '/continents/$slug'
@@ -251,6 +261,7 @@ export interface FileRouteTypes {
     | '/reserves'
     | '/signals'
     | '/sources'
+    | '/stack'
     | '/substack'
     | '/trade'
     | '/continents/$slug'
@@ -275,6 +286,7 @@ export interface FileRouteTypes {
     | '/reserves'
     | '/signals'
     | '/sources'
+    | '/stack'
     | '/substack'
     | '/trade'
     | '/continents/$slug'
@@ -300,6 +312,7 @@ export interface RootRouteChildren {
   ReservesRoute: typeof ReservesRoute
   SignalsRoute: typeof SignalsRoute
   SourcesRoute: typeof SourcesRoute
+  StackRoute: typeof StackRoute
   SubstackRoute: typeof SubstackRoute
   TradeRoute: typeof TradeRoute
 }
@@ -402,6 +415,13 @@ declare module '@tanstack/react-router' {
       path: '/sources'
       fullPath: '/sources'
       preLoaderRoute: typeof SourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stack': {
+      id: '/stack'
+      path: '/stack'
+      fullPath: '/stack'
+      preLoaderRoute: typeof StackRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/substack': {
@@ -520,6 +540,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReservesRoute: ReservesRoute,
   SignalsRoute: SignalsRoute,
   SourcesRoute: SourcesRoute,
+  StackRoute: StackRoute,
   SubstackRoute: SubstackRoute,
   TradeRoute: TradeRoute,
 }

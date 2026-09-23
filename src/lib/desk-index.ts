@@ -1,3 +1,4 @@
+import { FEEDS, STATUS_LABEL } from "@/data/stack";
 import { OIL_PORTS } from "@/data/ais-ports";
 import { AGENCY_BOOKS } from "@/data/agencies";
 import { CAPEX_REGIONS, CAPEX_RULES } from "@/data/capex";
@@ -15,7 +16,7 @@ import { producerSlug } from "@/lib/slug";
 
 export type DeskHit = {
   id: string;
-  kind: "region" | "producer" | "grade" | "choke" | "breakeven" | "source" | "signal" | "name" | "book" | "job" | "dispatch" | "ais";
+  kind: "region" | "producer" | "grade" | "choke" | "breakeven" | "source" | "signal" | "name" | "book" | "job" | "dispatch" | "ais" | "stack";
   title: string;
   blurb: string;
   href: string;
@@ -107,6 +108,13 @@ export const DESK_INDEX: DeskHit[] = [
     title: `${p.name} AIS`,
     blurb: `${p.locode} · ${p.country} · ${p.why}`,
     href: "/ais",
+  })),
+  ...FEEDS.map((f) => ({
+    id: `stack-${f.id}`,
+    kind: "stack" as const,
+    title: f.name,
+    blurb: `${f.domain} · ${STATUS_LABEL[f.status]} · ${f.note}`,
+    href: "/stack",
   })),
   ...SIGNALS.map((s) => ({
     id: `sig-${s.id}`,

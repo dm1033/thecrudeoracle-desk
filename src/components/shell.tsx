@@ -18,6 +18,7 @@ const NAV = [
   { to: "/briefing", label: "Briefing" },
   { to: "/dispatch", label: "Substack" },
   { to: "/sources", label: "Sources" },
+  { to: "/stack", label: "Stack" },
 ];
 
 export function Shell({ children }: { children: ReactNode }) {
