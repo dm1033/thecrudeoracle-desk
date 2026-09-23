@@ -69,6 +69,18 @@ function Home() {
             Country books
           </Link>
           <Link
+            to="/trade"
+            className="inline-flex h-11 items-center gap-2 rounded-md border border-border px-4 text-sm"
+          >
+            Trade
+          </Link>
+          <Link
+            to="/ais"
+            className="inline-flex h-11 items-center gap-2 rounded-md border border-border px-4 text-sm"
+          >
+            AIS tankers
+          </Link>
+          <Link
             to="/jobs"
             className="inline-flex h-11 items-center gap-2 rounded-md border border-border px-4 text-sm"
           >

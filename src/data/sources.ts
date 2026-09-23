@@ -4,7 +4,8 @@ export type SourceCadence =
   | "weekly"
   | "monthly"
   | "annual"
-  | "event";
+  | "event"
+  | "live";
 
 export type DeskSource = {
   id: string;
@@ -16,7 +17,7 @@ export type DeskSource = {
   why: string;
   url: string;
   usedFor: string[];
-  license: "public" | "public-summary" | "delayed-quote";
+  license: "public" | "public-summary" | "delayed-quote" | "commercial";
 };
 
 export const DESK_SOURCES: DeskSource[] = [
@@ -199,6 +200,30 @@ export const DESK_SOURCES: DeskSource[] = [
     url: "https://www.iea.org/reports/world-energy-investment-2025",
     usedFor: ["capex", "capital allocation"],
     license: "public",
+  },
+  {
+    id: "vesselfinder",
+    name: "VesselFinder AIS API",
+    short: "VesselFinder",
+    owner: "VesselFinder",
+    cadence: "live",
+    nextWindow: "On pull. Expected arrivals 12h, port calls 24h. Cached 15 min.",
+    why: "Tanker AIS types 80–89 expected into oil ports, plus port-call events. Paid credits. A position is not a barrel.",
+    url: "https://api.vesselfinder.com/docs/",
+    usedFor: ["AIS", "tankers", "port calls", "chokepoints"],
+    license: "commercial",
+  },
+  {
+    id: "marinetraffic",
+    name: "MarineTraffic AIS API",
+    short: "MarineTraffic",
+    owner: "MarineTraffic / Kpler",
+    cadence: "live",
+    nextWindow: "On pull. Tanker class, 60-minute window, choke boxes only.",
+    why: "exportvessels v9, vessel type 8, filtered to Hormuz, Bab, Suez, Malacca, Cape, Turkish Straits, US Gulf.",
+    url: "https://servicedocs.marinetraffic.com/tag/AIS-API/",
+    usedFor: ["AIS", "tankers", "chokepoints"],
+    license: "commercial",
   },
   {
     id: "ogj",

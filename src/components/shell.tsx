@@ -11,6 +11,7 @@ const NAV = [
   { to: "/flows", label: "Industry" },
   { to: "/reserves", label: "Reserves" },
   { to: "/trade", label: "Trade" },
+  { to: "/ais", label: "AIS" },
   { to: "/invest", label: "Invest" },
   { to: "/jobs", label: "Jobs" },
   { to: "/signals", label: "Signals" },

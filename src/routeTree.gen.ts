@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AisRouteImport } from './routes/ais'
 import { Route as BriefingRouteImport } from './routes/briefing'
 import { Route as ContinentsRouteImport } from './routes/continents'
 import { Route as DispatchRouteImport } from './routes/dispatch'
@@ -39,6 +40,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AisRoute = AisRouteImport.update({
+  id: '/ais',
+  path: '/ais',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BriefingRoute = BriefingRouteImport.update({
@@ -140,6 +146,7 @@ const ProducersSlugRoute = ProducersSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ais': typeof AisRoute
   '/briefing': typeof BriefingRoute
   '/continents': typeof ContinentsRouteWithChildren
   '/dispatch': typeof DispatchRouteWithChildren
@@ -163,6 +170,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ais': typeof AisRoute
   '/briefing': typeof BriefingRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/flows': typeof FlowsRoute
@@ -184,6 +192,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ais': typeof AisRoute
   '/briefing': typeof BriefingRoute
   '/continents': typeof ContinentsRouteWithChildren
   '/dispatch': typeof DispatchRouteWithChildren
@@ -209,6 +218,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/ais'
     | '/briefing'
     | '/continents'
     | '/dispatch'
@@ -232,6 +242,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/ais'
     | '/briefing'
     | '/feed.xml'
     | '/flows'
@@ -252,6 +263,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/ais'
     | '/briefing'
     | '/continents'
     | '/dispatch'
@@ -276,6 +288,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AisRoute: typeof AisRoute
   BriefingRoute: typeof BriefingRoute
   ContinentsRoute: typeof ContinentsRouteWithChildren
   DispatchRoute: typeof DispatchRouteWithChildren
@@ -305,6 +318,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ais': {
+      id: '/ais'
+      path: '/ais'
+      fullPath: '/ais'
+      preLoaderRoute: typeof AisRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/briefing': {
@@ -488,6 +508,7 @@ const ProducersRouteWithChildren = ProducersRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AisRoute: AisRoute,
   BriefingRoute: BriefingRoute,
   ContinentsRoute: ContinentsRouteWithChildren,
   DispatchRoute: DispatchRouteWithChildren,

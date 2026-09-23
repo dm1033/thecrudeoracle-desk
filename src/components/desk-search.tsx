@@ -14,6 +14,7 @@ const KIND: Record<string, string> = {
   book: "Book",
   job: "Jobs",
   dispatch: "Substack",
+  ais: "AIS",
 };
 
 export function DeskSearch() {

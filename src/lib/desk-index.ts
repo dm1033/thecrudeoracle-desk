@@ -1,3 +1,4 @@
+import { OIL_PORTS } from "@/data/ais-ports";
 import { AGENCY_BOOKS } from "@/data/agencies";
 import { CAPEX_REGIONS, CAPEX_RULES } from "@/data/capex";
 import { JOB_REGIONS, ROLE_BOOK, TRANSFERS, CV_REVIEW_URL } from "@/data/careers";
@@ -14,7 +15,7 @@ import { producerSlug } from "@/lib/slug";
 
 export type DeskHit = {
   id: string;
-  kind: "region" | "producer" | "grade" | "choke" | "breakeven" | "source" | "signal" | "name" | "book" | "job" | "dispatch";
+  kind: "region" | "producer" | "grade" | "choke" | "breakeven" | "source" | "signal" | "name" | "book" | "job" | "dispatch" | "ais";
   title: string;
   blurb: string;
   href: string;
@@ -98,7 +99,14 @@ export const DESK_INDEX: DeskHit[] = [
     kind: "source" as const,
     title: s.short,
     blurb: `${s.name} · ${s.why}`,
-    href: "/sources",
+    href: s.id === "vesselfinder" || s.id === "marinetraffic" ? "/ais" : "/sources",
+  })),
+  ...OIL_PORTS.map((p) => ({
+    id: `ais-${p.locode}`,
+    kind: "ais" as const,
+    title: `${p.name} AIS`,
+    blurb: `${p.locode} · ${p.country} · ${p.why}`,
+    href: "/ais",
   })),
   ...SIGNALS.map((s) => ({
     id: `sig-${s.id}`,
